@@ -274,7 +274,9 @@ else
     go get "${FLAGS[@]}" $pkgs
 fi
 
-#rm -rf $build/.heroku
+echo '=====> Using go at ' which go
+
+rm -rf $build/.heroku
 
 mkdir -p $build/.profile.d
 echo 'PATH=$PATH:$HOME/bin' > $build/.profile.d/go.sh
