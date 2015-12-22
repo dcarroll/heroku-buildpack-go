@@ -276,7 +276,7 @@ fi
 
 echo '=====> Using go at '
 which go
-echo '=====> Buildpath=$build'
+echo '=====> Buildpath='$build
 
 #rm -rf $build/.heroku
 
