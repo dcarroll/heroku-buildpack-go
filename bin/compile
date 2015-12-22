@@ -274,7 +274,8 @@ else
     go get "${FLAGS[@]}" $pkgs
 fi
 
-echo '=====> Using go at ' which go
+echo '=====> Using go at '
+which go
 
 rm -rf $build/.heroku
 
