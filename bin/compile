@@ -277,7 +277,7 @@ fi
 echo '=====> Using go at '
 echo '=====> Buildpath='$build
 ls -l /app/tmp/cache/go1.5.2
-cp -r /app/tmp/cache/go1.5.2 $build/vendor/go
+cp -r /app/tmp/cache/go1.5.2 $build/vendor
 #pull go out of cache and install in vendor
 GOROOT=/app/vendor/go
 GOBIN=$GOROOT/bin
