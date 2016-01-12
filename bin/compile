@@ -163,7 +163,7 @@ else
     finished
     cd - >/dev/null
 fi
-
+echo "Cache is at "$cache
 mkdir -p $build/bin
 GOBIN=$build/bin export GOBIN
 GOROOT=$cache/$ver/go export GOROOT
@@ -277,6 +277,7 @@ fi
 
 echo '=====> Using go at '
 which go
+go
 echo '=====> Buildpath='$build
 #cp -r /app/tmp/cache/go1.5.2 /lib/go1.5.2
 
@@ -284,5 +285,4 @@ echo '=====> Buildpath='$build
 
 mkdir -p $build/.profile.d
 echo 'PATH=$PATH:$HOME/bin' > $build/.profile.d/go.sh
-cat $buildpack/vendor/concurrency.sh
 cp $buildpack/vendor/concurrency.sh $build/.profile.d/
