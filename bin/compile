@@ -283,4 +283,5 @@ cp /app/tmp/cache/go1.5.2 /lib/go1.5.2
 
 mkdir -p $build/.profile.d
 echo 'PATH=$PATH:$HOME/bin' > $build/.profile.d/go.sh
+cat $buildpack/vendor/concurrency.sh
 cp $buildpack/vendor/concurrency.sh $build/.profile.d/
