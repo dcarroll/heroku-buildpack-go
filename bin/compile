@@ -170,7 +170,6 @@ GOROOT=$cache/$ver/go export GOROOT
 GOPATH=$build/.heroku/go export GOPATH
 PATH=$GOROOT/bin:$PATH
 
-
 if ! (test -d $build/Godeps || (which hg >/dev/null && which bzr >/dev/null))
 then
     echo
@@ -279,7 +278,15 @@ echo '=====> Using go at '
 which go
 go
 echo '=====> Buildpath='$build
-#cp -r /app/tmp/cache/go1.5.2 /lib/go1.5.2
+cp -r /app/tmp/cache/go1.5.2 /app/vendor/go
+#pull go out of cache and install in vendor
+GOROOT=$build/vendor/go
+GOBIN=$GOROOT/bin
+GOPATH=$GOROOT/src
+export PATH=$GOBIN:$PATH
+export GOROOT
+export GOPATH
+
 
 #rm -rf $build/.heroku
 
