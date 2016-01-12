@@ -280,15 +280,12 @@ ls -l /app/tmp/cache/go1.5.2
 cp -r /app/tmp/cache/go1.5.2/go $build/vendor
 #pull go out of cache and install in vendor
 GOROOT=/app/vendor/go
-GOBIN=$GOROOT/bin
-GOPATH=$GOROOT/src
-export PATH=$GOBIN:$PATH
-export GOROOT
-export GOPATH
+GOBIN=/app/vendor/go/bin
+GOPATH=/app/vendor/go/src
 
 
 #rm -rf $build/.heroku
 
 mkdir -p $build/.profile.d
-{ echo 'PATH=$PATH:$HOME/bin' ; echo 'GOROOT=$GOROOT' ; echo 'GOBIN=$GOROOT\bin' ; echo 'PATH=$PATH:$GOBIN' ;  echo 'GOPATH=/app' ; } >> $build/.profile.d/go.sh
+{ echo 'PATH=$PATH:$HOME/bin' ; echo 'GOROOT=$GOROOT' ; echo 'GOBIN=$GOROOT' ; echo 'PATH=$PATH:$GOBIN' ;  echo 'GOPATH=$GOPATH' ; } >> $build/.profile.d/go.sh
 cp $buildpack/vendor/concurrency.sh $build/.profile.d/
