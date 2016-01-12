@@ -275,8 +275,6 @@ else
 fi
 
 echo '=====> Using go at '
-which go
-go
 echo '=====> Buildpath='$build
 cp -r /app/tmp/cache/go1.5.2 /app/vendor/go
 #pull go out of cache and install in vendor
