@@ -3,7 +3,7 @@
 
 echo "--- {
   config_vars:
-    GOROOT: /app/vendor/go
-    GOBIN: /app/vendor/go/bin
+    GOROOT: /app/vendor/go,
+    GOBIN: /app/vendor/go/bin,
     GOPATH: /app/vendor/go/src
 }"
