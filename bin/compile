@@ -170,8 +170,8 @@ GOROOT=$cache/$ver/go export GOROOT
 GOPATH=$build/.heroku/go export GOPATH
 PATH=$GOROOT/bin:$PATH
 
-if ! (test -d $build/Godeps || (which hg >/dev/null && which bzr >/dev/null))
-then
+#if ! (test -d $build/Godeps || (which hg >/dev/null && which bzr >/dev/null))
+#then
     echo
     echo "       Tired of waiting for bzr and hg?"
     echo "       Use github.com/tools/godep for faster deploys."
@@ -189,7 +189,7 @@ then
     start "Installing Bazaar"
         pip install bzr > /dev/null 2>&1
     finished
-fi
+#fi
 
 p=$GOPATH/src/$name
 mkdir -p $p
