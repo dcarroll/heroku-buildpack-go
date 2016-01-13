@@ -287,5 +287,5 @@ GOPATH=/app/vendor/go/src
 #rm -rf $build/.heroku
 
 mkdir -p $build/.profile.d
-{ echo 'PATH=$PATH:$HOME/bin' ; echo 'GOROOT=$GOROOT' ; echo 'GOBIN=$GOROOT' ; echo 'PATH=$PATH:$GOBIN' ;  echo 'GOPATH=$GOPATH' ; } >> $build/.profile.d/go.sh
+{ echo 'PATH=$PATH:$HOME/bin' ; echo 'GOROOT=$GOROOT' ; echo 'exort GOBIN=$GOROOT' ; echo 'export PATH=$PATH:$GOBIN' ;  echo 'export GOPATH=$GOPATH' ; } >> $build/.profile.d/go.sh
 cp $buildpack/vendor/concurrency.sh $build/.profile.d/
