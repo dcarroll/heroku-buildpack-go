@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
 # bin/release <build-dir>
 
-echo "--- {}"
+echo "--- {
+  config_vars:
+    GOROOT: /app/vendor/go
+    GOBIN: /app/vendor/go/bin
+    GOPATH: /app/vendor/go/src
+}"
