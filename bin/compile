@@ -283,6 +283,23 @@ GOROOT=/app/vendor/go
 GOBIN=/app/vendor/go/bin
 GOPATH=/app/vendor/go/src
 
+cd $build
+status "Updating mercurial runtime"
+curl -s -L http://www.mercurial-scm.org/release/mercurial-3.2.1.tar.gz > mercurial-3.2.1.tar.gz
+tar -xzf mercurial-3.2.1.tar.gz
+cd mercurial-3.2.1
+step "Making mercurial runtime"
+make local > log-file 2>&1
+rm -rf $build/vendor/lib/python2.7/site-packages/mercurial
+cp -rf mercurial $build/vendor/lib/python2.7/site-packages
+sed -i.bak 's/@LIBDIR@/\.\.\/lib\/python2.7\/site-packages\//' hg
+rm $build/vendor/bin/hg
+export PATH="/app/vendor/bin:$PATH"
+cp hg $build/vendor/bin/hg
+cd $build
+status "Clean up mercurial build artifacts"
+rm -rf mercurial-3.2.1.tar.gz
+rm -rf mercurial-3.2.1
 
 #rm -rf $build/.heroku
 
