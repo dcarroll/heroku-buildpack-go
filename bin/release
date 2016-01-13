@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # bin/release <build-dir>
 
-echo "--- {}:
+echo "--- {}"
 echo "config_vars:"
 echo "  GOROOT: /app/vendor/go"
 echo "  GOBIN: /app/vendor/go/bin"
